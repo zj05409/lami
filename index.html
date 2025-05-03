@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拉密牌(Rummikub)游戏</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>拉密牌游戏</h1>
+        
+        <div class="game-layout">
+            <!-- 上方AI区域 -->
+            <div class="top-ai-area">
+                <div class="ai-area">
+                    <h3>AI 玩家 2</h3>
+                    <div id="ai2-rack" class="rack ai-rack"></div>
+                </div>
+            </div>
+            
+            <!-- 左侧和右侧AI -->
+            <div class="side-ais">
+                <div class="left-ai-area">
+                    <div class="ai-area">
+                        <h3>AI 玩家 1</h3>
+                        <div id="ai1-rack" class="rack ai-rack"></div>
+                    </div>
+                </div>
+                
+                <!-- 游戏板区域 -->
+                <div class="game-board">
+                    <h2>游戏板</h2>
+                    <div id="board" class="board"></div>
+                </div>
+                
+                <div class="right-ai-area">
+                    <div class="ai-area">
+                        <h3>AI 玩家 3</h3>
+                        <div id="ai3-rack" class="rack ai-rack"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 玩家区域 -->
+            <div class="player-area">
+                <h2>你的牌</h2>
+                <div class="controls">
+                    <button id="start-game">开始游戏</button>
+                    <button id="draw-tile">抽牌</button>
+                    <button id="undo-btn">撤销修改</button>
+                    <button id="end-turn">结束回合</button>
+                </div>
+                <div id="player-rack" class="rack"></div>
+            </div>
+        </div>
+        
+        <div id="messages" class="messages"></div>
+        
+        <div class="game-info">
+            <h3>游戏玩法说明</h3>
+            <ul>
+                <li>拖动牌可以在游戏板和牌架之间移动</li>
+                <li>牌组必须形成有效组合：</li>
+                <ul>
+                    <li>顺子：同色连续数字（如红色的1、2、3）</li>
+                    <li>同数字组：同数字不同颜色的牌（如红1、蓝1、黑1）</li>
+                </ul>
+                <li>可以从牌架拖牌到游戏板形成新组合</li>
+                <li>可以拖拽游戏板上的牌重新组合</li>
+                <li>可以将牌从一个组合拖到另一个组合中</li>
+                <li>可以将牌从游戏板拖回牌架</li>
+                <li>首次出牌总点数需达到30分</li>
+                <li>百搭牌可以代替任何牌</li>
+                <li>如果游戏板上有无效组合，结束回合按钮将被禁用</li>
+                <li>使用撤销按钮可以恢复本回合开始时的状态</li>
+                <li>成功出完所有牌的玩家获胜</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
